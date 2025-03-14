@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f0f4ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+}
+
+h1 {
+    color: #89a0f4;
+    font-family: "Space Grotesk", sans-serif;
+    font-style: normal;
+}
+
+button {
+    background-color: #89a0f4;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #5f7cd5;
+}
+
+p, h4 {
+    font-family: "Poor Story", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  #nameInput {
+    height: 30px;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    padding: 0 10px;
+    background-color: #fff;
+  }

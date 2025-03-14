@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE 복습 테스트</title>
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="modal/modal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>[KB🌟] HTML-CSS-JS TEST</h1>
+        <h4>함께 복습해봅시다!</h4>
+        <!-- <h5>아래 스타트 버튼을 눌러주세요<br></h5> -->
+        <img src="./chiikawa.gif" style="width: 100%; text-align: center;"><br>
+        <!-- <button class="btn btn-primary" onclick="start()">START</a></button> -->
+        <button type="button" class="modal_btn">START</button>
+        <div id="nameInputWrap">
+            <div id="nameInputBody">
+                <p>이름을 입력해주세요 !</p>
+                <label for="name"></label>
+                <input id="nameInput" name="nameInput" type="text" size="30">
+            </div>
+        </div>
+    </div>
+    <!--모달 팝업-->
+    <div class="modal">
+        <div class="modal_popup">
+            <h3>000 님! 오늘 하루도 화이팅하세요!</h3>
+            <p>곧 테스트가 시작됩니다!</p>
+            <img src="./runbear.gif" style="width: 30%; text-align: center;"><br>
+            <!-- <button type="button" class="close_btn">닫기</button> -->
+        </div>
+    </div>
+    <!--end 모달 팝업-->
+    <!-- <script src="start.js"></script> -->
+    <script src="modal/modalscript.js"></script>
+</body>
+</html>

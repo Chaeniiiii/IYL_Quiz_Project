@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML, CSS, JS Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="left_bar"></div>
+  <div class="middle">
+    <!-- @sangil  - userName &  timeTaken -->
+    <p style="font-size: 2em">
+      <span id="user-name"></span>'s
+      <span style="font-size: 0.8em">Your Life</span>
+    </p>
+    <p id="time-taken" style="font-size: 2.5em; color: gray">00:00</p>
+    <!-- ~ @sangil -->
+    <div id="question"></div>
+    <!-- 선택형 -->
+    <div id="option-container"></div>
+    <!-- 단답형 -->
+    <div id="subjective-container" class="quiz-type" style="display: none">
+      <div class="subjective-box">
+        <div class="subjective-option" id="subjective-option"></div>
+      </div>
+      <button class="submit-btn" id="checkAnswer" disabled>정답 확인</button>
+    </div>
+
+    <div id="explanation"></div>
+  </div>
+  <!-- @sangil 문제 다 풀면 이동동 -->
+  <p id="blinking-text">
+    수고하셨습니다!<br />
+    <span id="countdown"></span>
+  </p>
+  <script src="javascript.js"></script>
+  <!-- @sangil -->
+  <script>
+    let elapsedTime = 0; // 경과 시간 (초)
+
+    function updateLoadTime() {
+      // "blinking-text"의 display 속성을 확인하여 멈춤
+      const blinkingText = document.getElementById('blinking-text');
+      if (blinkingText && blinkingText.style.display === 'block') {
+        document.getElementById('time-taken').style.color = 'green';
+        clearInterval(elapsedTimeInterval); // 타이머 멈춤
+        return;
+      }
+      elapsedTime++; // 1초 증가
+
+      let minutes = Math.floor(elapsedTime / 60);
+      let seconds = elapsedTime % 60;
+
+      // 2자리 숫자로 변환 (00:00 형식)
+      let formattedMinutes = minutes.toString().padStart(2, '0');
+      let formattedSeconds = seconds.toString().padStart(2, '0');
+
+      document.getElementById(
+        'time-taken'
+      ).textContent = `${formattedMinutes}:${formattedSeconds}`;
+    }
+
+    // 1초마다 updateLoadTime 실행
+    setInterval(updateLoadTime, 1000);
+  </script>
+  <script>
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        // 현재 보이는 버튼을 찾아서 클릭 이벤트 발생
+        const activeSubmitButton = document.querySelector('.submit-btn:not([disabled])');
+
+        if (activeSubmitButton) {
+          activeSubmitButton.click();
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

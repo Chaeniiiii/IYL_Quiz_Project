@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>결과 페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="result.css" />
+  </head>
+  <body>
+    <div class="result-box">
+      <!-- 상단 Title 추가 -->
+      <h1 id="title">🎊 축하합니다🎊</h1>
+      <h1 id="result-name"></h1>
+      <h2 id="score"></h2>
+      <h2 id="time-taken"></h2>
+      <!-- 시작 페이지 이동 버튼 추가 -->
+      <button id="return-btn">🔥 Restart 🔥</button>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const userName = params.get('name') || '이름 없음';
+      const score = params.get('score') || '정보 없음';
+      const timeTaken = params.get('timeTaken') || '정보 없음';
+      const restartBtn = document.querySelector('#return-btn');
+
+      document.getElementById('score').textContent = `정답 개수 : ${score}`;
+      document.getElementById(
+        'time-taken'
+      ).textContent = `총 소요 시간: ${timeTaken}`;
+      document.querySelector('#result-name').textContent = `${userName}님 결과`;
+
+      // 시작 페이지 이동 버튼
+      restartBtn.addEventListener('click', function () {
+        location.href = 'start.html';
+      });
+    </script>
+  </body>
+</html>
